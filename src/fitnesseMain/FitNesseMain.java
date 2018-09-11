@@ -12,6 +12,7 @@ import fitnesse.socketservice.SslParameters;
 import fitnesse.socketservice.SslServerSocketFactory;
 import fitnesse.updates.WikiContentUpdater;
 
+
 import java.io.*;
 import java.net.BindException;
 import java.net.ServerSocket;
@@ -93,6 +94,8 @@ public class FitNesseMain {
       return null;
     }
 
+    
+    //stupid comment
     try {
       return launch(context, classLoader);
     } catch (BindException e) {
@@ -137,6 +140,10 @@ public class FitNesseMain {
       }
     }
     return null;
+  }
+  
+  public int returnAConstant() {
+    return 12;
   }
 
   private ServerSocket createServerSocket(FitNesseContext context, ClassLoader classLoader) throws IOException {
