@@ -80,6 +80,7 @@ public class Arguments {
   public ContextConfigurator update(ContextConfigurator defaults) {
     ContextConfigurator result = defaults;
 
+    try{
     result = result.withParameter(LOG_LEVEL, verboseLogging ? "verbose" : "normal");
     if (configFile != null)
       result = result.withParameter(CONFIG_FILE, configFile);
@@ -103,6 +104,9 @@ public class Arguments {
       result = result.withParameter(COMMAND, command);
     if (credentials != null)
       result = result.withParameter(CREDENTIALS, credentials);
+    } catch(Exception e) {
+      //donothing
+    }
 
     return result;
   }
